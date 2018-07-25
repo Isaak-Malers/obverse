@@ -1,0 +1,44 @@
+<div class="image-container">
+	<div id="form-Data" style="display: inline-block;">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" ng-click="$event.stopPropagation()" ng-model="node.meta.name"></td>
+			</tr>
+			<tr>
+				<td>Description:</td>
+				<td><input type="text" ng-click="$event.stopPropagation()" ng-model="node.meta.description"></td>
+			</tr>
+			<tr>
+				<td>Xpath:</td>
+				<td><input type="text" ng-click="$event.stopPropagation()" ng-model="node.meta.xpath"></td>
+			</tr>
+			<tr>
+				<td>Ng-Model:</td>
+				<td><input type="text" ng-click="$event.stopPropagation()" ng-model="node.meta.model"></td>
+			</tr>
+			<tr>
+				<td>CSS:</td>
+				<td><input type="text" ng-click="$event.stopPropagation()" ng-model="node.meta.css"></td>
+			</tr>
+		</table>
+		<div style="display: flex;">
+			<div ng-click="$event.stopPropagation; node.meta.relative = !node.meta.relative" class="button ui-element">
+						Relative: {{node.meta.relative}}
+			</div>
+		</div>
+	
+		<div style="background: green" ng-click="console.log(conf)">{{conf.ip}}</div>
+
+
+		<div id="screenshot-portal" style="display:inline-block; background: silver; margin:10px;">
+			<!--
+				There was a proprietary data leak on this line before being open sourced.  It will need to be fixed as it has been removed.
+			-->
+			<!--
+
+				<img ng-src="" width="576" height="282">
+			-->
+		</div>
+	</div>
+</div>

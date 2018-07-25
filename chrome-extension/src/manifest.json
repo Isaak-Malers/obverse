@@ -1,0 +1,17 @@
+{
+	"name": "obverse",
+	"description": "obverse is a tool which helps to debug and maintain web end to end tests, or other web automation",
+	"version": "0.0",
+
+
+	"minimum_chrome_version": "10.0",
+	"manifest_version": 2,
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+	"devtools_page": "devtools.html",
+
+	"permissions": [
+		"http://*/",
+		"https://*/"
+	]
+}

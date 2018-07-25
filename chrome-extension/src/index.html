@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<script src="static/angular-1-6-10.js"></script>
+<script src="static/main.js"></script>
+<link rel="stylesheet" type="text/css" href="static/main.css">
+<link type="text/html" href="static/directive-templates/nav.html">
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Obverse</title>    
+</head>
+
+<body>
+	<!-- container class simulates small screen area required for chrome plugin -->
+	<div ng-app="obverse-ui" ng-controller="obverse-ctrl" ng-csp class="container">
+		<!-- Nav Angular Directive -->
+		<nav> Nav Directive Failed to Load</nav>
+		<!-- map angular directive (recursivly calling on the node attribute) -->
+		<div class="scroll-window">
+  			<map node="map">Map Directive Failed to Load</map>
+  		</div>
+	</div>
+</body>
+</html>

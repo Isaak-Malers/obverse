@@ -1,0 +1,6 @@
+tests/*
+!tests/example
+!tests/example/*
+!tests/demo
+!tests/demo/*
+!tests/init.js

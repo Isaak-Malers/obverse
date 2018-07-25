@@ -1,0 +1,56 @@
+<div class="ui-element recursion-container">
+
+
+	<!-- This block of HTML represents the "header" displaying the information about this node -->
+	<!-- There is a little weirdness here because this includes a floating directive to display details. -->
+	<div class="details-container">
+		<div class="details-name" ng-click="dev(node.meta.inherit)">{{node.meta.name}}</div>
+		<!-- Carrot Menu's for Collapsing and Expanding the Nodes Children: -->
+		<!-- The carrot class includes some padding to make these easier to click. -->
+		<!-- Both carrot styles are hidden for elements with no children -->
+		<div class="carrot" ng-click="node.meta.UIshow = !node.meta.UIshow" ng-show="node.hooks.length > 0">
+			<img height="16" width="16" src="static/assets/down-512.png" ng-show="node.meta.UIshow">
+			<img height="16" width="16" src="static/assets/up-512.png" ng-hide="node.meta.UIshow">
+		</div>
+
+		<div>{{settings.ip}}</div>
+
+		<!-- -->
+		<div class="carrot" ng-hide="node.meta.UIshow" ng-click="node.hooks.push({'meta':{},'hooks':[]})">
+			<img height="16" width="16" src="static/assets/plus-flat.png">
+		</div>
+
+		<!-- break has flexgrow to expand in the middle:-->
+		<div class="break"></div>
+
+		<!-- Sideways Carrot Menu's for Showing/Hiding the Nodes details: -->
+		<div class="carrot" ng-click="node.meta.UIdetails = !node.meta.UIdetails">
+			<img height="16" width="16" src="static/assets/up-512.png" ng-show="node.meta.UIdetails">
+			<img height="16" width="16" src="static/assets/down-512.png" ng-hide="node.meta.UIdetails">
+		</div>
+
+
+
+
+
+		<div class="details-path">{{node.meta.UIpath}}</div>
+	</div>
+	<div ng-if="node.meta.UIdetails" style="position: relative;">
+		<details node="node">Details Directive Failed to Load</details>
+	</div>
+
+	<!-- This block of HTML represents the "children" or the tree view. -->
+	<!-- Ng Repeat for all of the DIRECT decendants of this node: -->
+	<div ng-repeat="object in node.hooks" ng-hide="node.meta.UIshow">
+		<!-- Note* map is called recursivly here -->
+		<map node="object">Map Directive Failed to Load</map>
+	</div>
+	<!-- Ng Repeat for all of the INHERRITED decendants of this node: -->
+	<div ng-repeat="object in lookup(node.meta.inherit).hooks" ng-hide="node.meta.UIshow">
+		<!-- Note* map is called recursivly here -->
+		<map node="object"">Map Directive Failed to Load</map>
+	</div>
+
+
+
+</div>

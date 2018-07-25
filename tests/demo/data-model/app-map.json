@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "name": "app-map",
+    "description": "the root node of the testing app-map",
+    "UIpath": "",
+    "css": null,
+    "model": null,
+    "url": null,
+    "UIdetails": false,
+    "xpath": null
+  },
+  "hooks": []
+}

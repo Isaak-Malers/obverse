@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "name": "wikipedia",
+    "description": "An Obverse data-set for searching wikipedia and examining headers."
+  },
+  "hooks": [
+    {
+      "meta": {
+        "name": "commons",
+        "xpath": "//*[@id=\"www-wikipedia-org\"]/div[6]/div[3]/div[1]/a/div[2]/span[1]"
+      },
+      "hooks": [
+        {
+          "meta": {
+            "name": "picture-of-the-day",
+            "xpath": "//*[@id=\"mainpage-potd\"]/div[1]/a/img"
+          },
+          "hooks": []
+        },
+        {
+          "meta": {
+            "name": "picture-of-the-year-voting",
+            "xpath": "//*[@id=\"mw-content-text\"]/div/div/table[2]/tbody/tr/td[3]/div[1]/div[2]/div[2]/p/a/span/span/b"
+          },
+          "hooks": []
+        }
+      ]
+    },
+    {
+      "meta": {
+        "name": "search-page"
+      },
+      "hooks": [
+        {
+          "meta": {
+            "name": "english",
+            "xpath": "//*[@id=\"js-link-box-en\"]/strong"
+          },
+          "hooks": []
+        },
+        {
+          "meta": {
+            "name": "search-text",
+            "xpath": "//*[@id=\"searchInput\"]"
+          },
+          "hooks": []
+        },
+        {
+          "meta": {
+            "name": "search-button",
+            "xpath": "//*[@id=\"search-form\"]/fieldset/button"
+          },
+          "hooks": []
+        },
+        {
+          "meta": {
+            "name": "language",
+            "xpath": "//*[@id=\"searchLanguage\"]"
+          },
+          "hooks": []
+        }
+      ]
+    },
+    {
+      "meta": {
+        "name": "article-page"
+      },
+      "hooks": [
+        {
+          "meta": {
+            "name": "heading",
+            "xpath": "//*[@id=\"firstHeading\"]"
+          },
+          "hooks": []
+        }
+      ]
+    }
+  ]
+}

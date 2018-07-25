@@ -1,0 +1,3 @@
+app.js is a backend for the chrome extension running in express.
+
+this will eventually be replaced by the chrome extension working on a users computer directly.

@@ -1,0 +1,25 @@
+{
+  "name": "obverse",
+  "version": "0.0.0",
+  "description": "provides tools to automatically build protractor test rigs, as well as enhanced debugging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Isaak-Malers/obverse.git"
+  },
+  "keywords": [
+    "protractor",
+    "jasmine",
+    "selenium",
+    "webdriverJS"
+  ],
+  "author": "Isaak Malers, David Hamilton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Isaak-Malers/obverse/issues"
+  },
+  "homepage": "https://github.com/Isaak-Malers/obverse#readme"
+}
