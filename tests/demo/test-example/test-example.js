@@ -1,5 +1,5 @@
 //require in the obverse library
-var obverse = require('../../../bin/lib/obverse');
+var Obverse = require('../../../bin/lib/obverse');
 
 //require in the test cases, by requiring a directory, we get the index.js by default.
 var cases = require("./test-cases");
@@ -21,12 +21,12 @@ describe("a test", function(){
 
 				//create a new obverse object.
 				//the object will be destroyed at the end of the test when its "finalize" function is called.
-				var ui = new obverse("demo");
+				var ui = new Obverse("demo");
 				//set the log level to debug, which will print out every high level step:
 				//log levels are": trace, debug, minor, critical
 				ui.setLogLevel("debug");
-				//supress dumping all logs from a step whenever a failure occurs.
-				ui.supressDumps(true);
+				//suppress dumping all logs from a step whenever a failure occurs.
+				ui.suppressDumps(true);
 				//set the additional delay after each action to 80 milliseconds.
 				//this can be set as low as one.
 				ui.setDelay(80);

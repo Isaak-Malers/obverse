@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites disabled="0" errors="0" failures="1" tests="1" time="3.73">
+ <testsuite name="Basic Language selection tests for wikipedia" timestamp="2018-07-26T10:08:05" hostname="localhost" time="3.73" errors="0" tests="1" skipped="0" disabled="0" failures="1">
+  <testcase classname="Basic Language selection tests for wikipedia" name="should be able to change the language from default to polish" time="3.728">
+   <failure type="toBe" message="Expected &apos;English&apos; to be &apos;PL&apos;."><![CDATA[Error: Failed expectation
+    at /home/isaak/Desktop/gitRefresh/obverse/tests/example/wikipedia/example.js:60:46
+    at Obverse.<anonymous> (/home/isaak/Desktop/gitRefresh/obverse/src/obverse.js:250:45)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+</testsuites>
