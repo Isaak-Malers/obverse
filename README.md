@@ -2,7 +2,7 @@
 
 Obverse is a library and style guide for protractor automated testing, and is comprised of the following  parts:
 
-![](./doc/readMe-assets/parts.png)
+![](./doc-source/readMe-assets/parts.png)
 
 The major additions to protractor are:
 
@@ -14,14 +14,25 @@ The major additions to protractor are:
 
 The most visible part of an obverse test is the "map" of the website to test. A chrome extension which adds a data-entry tool to the developer tools enables a fast developer workflow for creating and updating test-rigs.
 
-![](./doc/readMe-assets/datamodel-example.png)
+![](./doc-source/readMe-assets/datamodel-example.png)
 
 
-## Back end & Directory Structure:
+## Test Rig Data:
 
-A back end written in Node.js allows the meta-data about the website to be stored to disk.  Tests are always stored in a consistent directory structure.  The tests directory stores all the test areas.  each of those directories contains a data-model folder, which contains the obverse test rigs, and a test-scripts directory which contains any tests or test data-sets.
+Test rigs are stored in a rigid directory structure.  The entire directory is considered to be a part of the test rig, but there is no database or other complex data-store.
 
-![](./doc/readMe-assets/backend.png)
+```
+/data-model
+  /images
+  /app-map-backups
+  app-map.json
+  .gitignore
+```
+
+* The images folder stores image metadata about test elements.
+* The app-map-backups directory contains a copy of app-map.json at every single save point
+* app-map.json is the primary data used by the chrome extension to store test rig data
+* .gitignore is included by default so that the large images and app-map-backup directories don't wind up in your repository!
 
 
 ## Test Library:
@@ -35,7 +46,49 @@ The Obverse run time library uses the data stored in the "data-model" directory 
 * Obverse.el (ui.el) is used to locate a page element based on its name in the data-model and the current page location.
 * Obverse.finalize (ui.finalize) compiles failure reasons and fails or passes the test.
 
-![](./doc/readMe-assets/code.png)
+```js
+var Obverse = require('../../../src/obverse');
+//global test variables can go here, or they could be read in from an external file.
+var url = "https://www.wikipedia.org/";
+
+describe("Basic Language selection tests for wikipedia", function(){
+
+	it("should be able to change the language from default to polish", function(done){
+		//construct an obverse object for this test case.
+		var ui = new Obverse("example");
+		ui.setLogLevel("debug");
+		ui.suppressDumps(true);//failure reasons will not be automatically logged to console.
+		ui.setDelay(1);//additionall delay between actions, setting to 0 breaks protractor.
+		browser.waitForAngularEnabled(false);//disable protractors built in waiting methods.
+
+		ui.step("load the test url: " + url, function(){
+			return browser.get(url);
+		});
+
+		ui.step("change the language from default to polish", function(){
+			return ui.at("search-page")
+			.then(ui.select("language", "Polski"));
+		});
+
+		//this assertion should pass
+		ui.step("verify the link to the english version is labled 'English'", function(){
+			return expect(ui.el("english").getText()).toBe("English");
+		});
+
+		//this assertion should fail to showcase error reporting.
+		ui.step("verify the link to the english version is labled 'PL', this should fail", function(){
+			return expect(ui.el("english").getText()).toBe("PL");
+		});
+
+		//compile results, then call jasmines (done) function to complete the test.
+		ui.finalize(function(){
+			done();
+		});
+
+	});
+});
+
+```
 
 
 Obverse also provides built in "shorthand" actions for the following browser actions:
@@ -51,7 +104,7 @@ Obverse also provides built in "shorthand" actions for the following browser act
 
 Obverse provides in depth logging, and can be used to generate human readable instructions for failing tests.  Failing tests can have their instructions compiled and then sent automatically to manual QA personnel for a second check.  This saves developer time.
 
-![](./doc/readMe-assets/debugging.png)
+![](./doc-source/readMe-assets/debugging.png)
 
 
 # Getting started:

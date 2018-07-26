@@ -52,11 +52,13 @@ exports.config =
   //REPORTING ARGUMENTS:
 
   //this code will use the JUnitXmlReporter, which outputs to a standard format:
+  /*
   onPrepare: function(){
     var reporters = require('jasmine-reporters');
     jasmine.getEnv().addReporter(
       new reporters.JUnitXmlReporter(null, true, true, "../results")
     );
   }
+  */
 
 }
