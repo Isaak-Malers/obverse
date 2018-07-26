@@ -1,3 +1,4 @@
+*.idea
 tests/*
 !tests/example
 !tests/example/*

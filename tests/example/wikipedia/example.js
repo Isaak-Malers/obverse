@@ -1,4 +1,4 @@
-var obverse = require('../../../bin/lib/obverse.js');
+var Obverse = require('../../../bin/lib/obverse');
 
 
 
@@ -35,9 +35,9 @@ describe("Basic Language selection tests for wikipedia", function(){
 
 	it("should be able to change the language from default to polish", function(done){
 		//construct an obverse object for this test case.
-		var ui = new obverse("example");
+		var ui = new Obverse("example");
 		ui.setLogLevel("debug");
-		ui.supressDumps(true);//failure reasons will not be automatically logged to console.
+		ui.suppressDumps(true);//failure reasons will not be automatically logged to console.
 		ui.setDelay(1);//additionall delay between actions, setting to 0 breaks protractor.
 		browser.waitForAngularEnabled(false);//disable protractors built in waiting methods.
 
@@ -100,9 +100,9 @@ describe("Basic Language selection tests for wikipedia", function(){
 			it("should search for some state colleges and make sure the search results are helpfull", function(done){
 				
 				//beforeEach doesn't execute this code syncronously.
-				var ui = new obverse("example");
+				var ui = new Obverse("example");
 				ui.setLogLevel("debug");
-				ui.supressDumps(true);
+				ui.suppressDumps(true);
 				ui.setDelay(120);
 				browser.waitForAngularEnabled(false);
 				
