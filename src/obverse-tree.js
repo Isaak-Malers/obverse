@@ -43,7 +43,7 @@ var Tree = function (object, logger, parent) {
 
     //throw exceptions if needed:
     var msg;
-    if (this.meta.name === null) {
+    if (this.meta.name === null || this.meta.name === "") {
         msg = "tree encountered a node without a name, this is a fatal error, prefix is: " + prefix;
         this.log.log(msg, "critical");
         throw msg;
