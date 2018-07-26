@@ -9,4 +9,20 @@
     </url>
     
 
+    
+    <url>
+     <loc>/api/</loc>
+     <lastmod>2018-07-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/style-guide/</loc>
+     <lastmod>2018-07-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>
