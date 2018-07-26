@@ -33,7 +33,7 @@ var Obverse = function (model) {
 
     // Build the in memory tree objects:
     this.model = model;
-    var mapJson = require("../../tests/" + model + "/data-model/app-map.json");
+    var mapJson = require("../tests/" + model + "/data-model/app-map.json");
     this.map = new Tree(mapJson, this.log);
 
     // Setup runtime data members:

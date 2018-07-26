@@ -35,7 +35,7 @@ Logger.prototype.isValidLevel = function (level) {
     if (level === "minor") {
         return true;
     }
-    if (level === "Logger") {
+    if (level === "debug") {
         return true;
     }
     if (level === "trace") {

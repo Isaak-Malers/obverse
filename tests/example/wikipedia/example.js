@@ -1,4 +1,4 @@
-var Obverse = require('../../../bin/lib/obverse');
+var Obverse = require('../../../src/obverse');
 
 
 
