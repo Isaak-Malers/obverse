@@ -1,1 +1,10 @@
-site_name: My Docs
+site_name: Obverse
+repo_url: https://github.com/Isaak-Malers/Obverse/
+site_description: Obverse Documentation site
+site_author: Isaak Malers
+
+
+pages: 
+  - 'Overview': 'index.md'
+  - 'API': 'api.md'
+  - 'Style Guide': 'style-guide.md'
