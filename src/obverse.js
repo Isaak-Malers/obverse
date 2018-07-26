@@ -12,7 +12,7 @@ var Util = require('./obverse-util');
  * 3. Replaces protractors Automatic Waiting with a less brittle, more controllable approach based on metadata about a page.
  * 4. Provides unified logging and debugging, with specific and helpful error messages instead of unhelpful truncated stack traces.
  * 5. Provides tools for standard protractor code to be used incrementally.
- * 6. IN PROGRESS: Provide a "dry-run" test environment, where the data for the test can be used to generate instructions for a human to go duplicate the test.
+ * 6. Provides a DryRun feature, where tests that fail halfway through will still log unfinished steps, in order to make failure messages more helpfull to manual testers.
  *
  * @param {String} model obverse/tests/{directory-name}, this name is used to construct paths for logging, images, and importing the data model.
  *
