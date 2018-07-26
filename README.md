@@ -2,7 +2,7 @@
 
 Obverse is a library and style guide for protractor automated testing, and is comprised of the following  parts:
 
-![](./doc/readMe-assets/parts.png)
+![](./doc-source/readMe-assets/parts.png)
 
 The major additions to protractor are:
 
@@ -14,7 +14,7 @@ The major additions to protractor are:
 
 The most visible part of an obverse test is the "map" of the website to test. A chrome extension which adds a data-entry tool to the developer tools enables a fast developer workflow for creating and updating test-rigs.
 
-![](./doc/readMe-assets/datamodel-example.png)
+![](./doc-source/readMe-assets/datamodel-example.png)
 
 
 ## Test Rig Data:
@@ -104,7 +104,7 @@ Obverse also provides built in "shorthand" actions for the following browser act
 
 Obverse provides in depth logging, and can be used to generate human readable instructions for failing tests.  Failing tests can have their instructions compiled and then sent automatically to manual QA personnel for a second check.  This saves developer time.
 
-![](./doc/readMe-assets/debugging.png)
+![](./doc-source/readMe-assets/debugging.png)
 
 
 # Getting started:
