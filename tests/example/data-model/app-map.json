@@ -99,7 +99,7 @@
           "meta": {
             "name": "language",
             "xpath": "//*[@id=\"searchLanguage\"]",
-            "UIpath": "search-page.english",
+            "UIpath": "search-page.language",
             "description": "",
             "css": null,
             "model": null,
