@@ -43,14 +43,16 @@ var Tree = function (object, logger, parent) {
 
     //throw exceptions if needed:
     var msg;
+    //TODO, there is a bug here, prefix is an un-used variable.  the line before throw msg; will throw a key exception.
     if (this.meta.name === null || this.meta.name === "" || this.meta.name === undefined) {
         msg = "tree encountered a node without a name, this is a fatal error, prefix is: " + prefix;
         this.log.log(msg, "critical");
         throw msg;
     }
 
+
     if ("hooks" in object === false || object.hooks === null) {
-        this.log.log("tree encountered a node without a hooks array: " + this.meta.name + ".  Setting it to empty", "trace");
+        this.log.log("tree encountered a node without a hooks array: " + this.meta.name + ".  Setting it to empty", "minor");
         object.hooks = [];
     }
 
@@ -64,6 +66,25 @@ var Tree = function (object, logger, parent) {
     for (var i = 0; i < object.hooks.length; i++) {
         this.hooks.push(new Tree(object.hooks[i], logger, this));
     }
+
+    //additionally, check for duplicate names in the hooks array.
+    //duplicate names will result in un-predictible behaviour during test running.
+    if(true === (function(array){
+	    var valuesSoFar = Object.create(null);
+	    for (var i = 0; i < array.length; ++i) {
+	        var value = array[i];
+	        if (value in valuesSoFar) {
+	            return true;
+	        }
+	        valuesSoFar[value] = true;
+	    }
+	    return false;
+	})(this.listHooks())){
+    	var msg = "duplicate child names found in: " + this.getFullName();
+    	this.log.log(msg, "critical");
+    	throw msg;
+	}
+
 };
 
 Tree.prototype.getFullName = function () {

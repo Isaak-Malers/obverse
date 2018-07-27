@@ -7,7 +7,7 @@ describe("Basic Language selection tests for wikipedia", function(){
 	it("should be able to change the language from default to polish", function(done){
 		//construct an obverse object for this test case.
 		var ui = new Obverse("example");
-		ui.setLogLevel("debug");
+		ui.setLogLevel("trace");
 		ui.suppressDumps(true);//failure reasons will not be automatically logged to console.
 		ui.setDelay(1);//additionall delay between actions, setting to 0 breaks protractor.
 		browser.waitForAngularEnabled(false);//disable protractors built in waiting methods.
