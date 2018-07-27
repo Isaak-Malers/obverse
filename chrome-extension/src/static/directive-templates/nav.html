@@ -4,12 +4,12 @@
 			Save
 		</div>
 
-		<div ng-click="loadData()" class = "button ui-element header-button-fix">
-			Load
+		<div class = "button ui-element header-button-fix">
+			Open
 		</div>
 
-		<div ng-click="settings.show = !settings.show" class="button ui-element header-button-fix">
-			Settings
+		<div class = "button ui-element header-button-fix">
+			New
 		</div>
 
 		<div style="flex-grow: 1"></div>
@@ -19,26 +19,17 @@
 			<div><input type="text" style="background: slategrey; width: 200px;"></div>
 		</div>
 	</div>
+
 	<div ng-show="settings.show || settings.map === null">
-		<table>
-			<!--
-			<tr>
-				<td>Backend IP: </td>
-				<td><input type="text" ng-model="settings.ip" style="width: 120px; background: silver;"></td>
-			</tr>
-			-->
-			<tr>
-				<td>App-Map:</td>
-				<td>
-					<select ng-model="settings.map" class = "button ui-element header-button-fix">
-						<option ng-repeat="n in settings.maps track by $index" value="{{n}}" >{{n}}</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td>Version:</td>
-				<td>{{settings.version}}</td>
-			</tr>
-		</table>
+		<div class="header">
+			<div ng-repeat="x in settings.maps">
+				<div class="button upload ui-element header-button-fix" ng-if="x!==settings.map" ng-click="settings.map=x; loadData()">
+					{{x}}
+				</div>
+				<div style="border: 2px; border-style: solid;" class="button upload ui-element header-button-fix" ng-if="x===settings.map">
+					{{x}}
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

@@ -1,26 +1,46 @@
 {
   "meta": {
     "name": "wikipedia",
-    "description": "An Obverse data-set for searching wikipedia and examining headers."
+    "description": "An Obverse data-set for searching wikipedia and examining headers.",
+    "UIpath": "",
+    "xpath": null,
+    "css": null,
+    "model": null,
+    "url": null
   },
   "hooks": [
     {
       "meta": {
         "name": "commons",
-        "xpath": "//*[@id=\"www-wikipedia-org\"]/div[6]/div[3]/div[1]/a/div[2]/span[1]"
+        "xpath": "//*[@id=\"www-wikipedia-org\"]/div[6]/div[3]/div[1]/a/div[2]/span[1]",
+        "UIpath": "commons",
+        "description": null,
+        "css": null,
+        "model": null,
+        "url": null
       },
       "hooks": [
         {
           "meta": {
             "name": "picture-of-the-day",
-            "xpath": "//*[@id=\"mainpage-potd\"]/div[1]/a/img"
+            "xpath": "//*[@id=\"mainpage-potd\"]/div[1]/a/img",
+            "UIpath": "commons.picture-of-the-day",
+            "description": null,
+            "css": null,
+            "model": null,
+            "url": null
           },
           "hooks": []
         },
         {
           "meta": {
             "name": "picture-of-the-year-voting",
-            "xpath": "//*[@id=\"mw-content-text\"]/div/div/table[2]/tbody/tr/td[3]/div[1]/div[2]/div[2]/p/a/span/span/b"
+            "xpath": "//*[@id=\"mw-content-text\"]/div/div/table[2]/tbody/tr/td[3]/div[1]/div[2]/div[2]/p/a/span/span/b",
+            "UIpath": "commons.picture-of-the-year-voting",
+            "description": null,
+            "css": null,
+            "model": null,
+            "url": null
           },
           "hooks": []
         }
@@ -28,34 +48,61 @@
     },
     {
       "meta": {
-        "name": "search-page"
+        "name": "search-page",
+        "UIpath": "search-page",
+        "description": null,
+        "xpath": null,
+        "css": null,
+        "model": null,
+        "url": null
       },
       "hooks": [
         {
           "meta": {
             "name": "english",
-            "xpath": "//*[@id=\"js-link-box-en\"]/strong"
+            "xpath": "//*[@id=\"js-link-box-en\"]/strong",
+            "UIpath": "search-page.english",
+            "description": null,
+            "css": null,
+            "model": null,
+            "url": null
           },
           "hooks": []
         },
         {
           "meta": {
             "name": "search-text",
-            "xpath": "//*[@id=\"searchInput\"]"
+            "xpath": "//*[@id=\"searchInput\"]",
+            "UIpath": "search-page.search-text",
+            "description": null,
+            "css": null,
+            "model": null,
+            "url": null
           },
           "hooks": []
         },
         {
           "meta": {
             "name": "search-button",
-            "xpath": "//*[@id=\"search-form\"]/fieldset/button"
+            "xpath": "//*[@id=\"search-form\"]/fieldset/button",
+            "UIpath": "search-page.search-button",
+            "description": null,
+            "css": null,
+            "model": null,
+            "url": null
           },
           "hooks": []
         },
         {
           "meta": {
             "name": "language",
-            "xpath": "//*[@id=\"searchLanguage\"]"
+            "xpath": "//*[@id=\"searchLanguage\"]",
+            "UIdetails": false,
+            "description": "",
+            "UIpath": "search-page.language",
+            "css": null,
+            "model": null,
+            "url": null
           },
           "hooks": []
         }
@@ -63,13 +110,24 @@
     },
     {
       "meta": {
-        "name": "article-page"
+        "name": "article-page",
+        "UIpath": "article-page",
+        "description": null,
+        "xpath": null,
+        "css": null,
+        "model": null,
+        "url": null
       },
       "hooks": [
         {
           "meta": {
             "name": "heading",
-            "xpath": "//*[@id=\"firstHeading\"]"
+            "xpath": "//*[@id=\"firstHeading\"]",
+            "UIpath": "article-page.heading",
+            "description": null,
+            "css": null,
+            "model": null,
+            "url": null
           },
           "hooks": []
         }
