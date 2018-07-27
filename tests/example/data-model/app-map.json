@@ -97,7 +97,7 @@
           "meta": {
             "name": "language",
             "xpath": "//*[@id=\"searchLanguage\"]",
-            "UIdetails": false,
+            "UIdetails": true,
             "description": "",
             "UIpath": "search-page.language",
             "css": null,

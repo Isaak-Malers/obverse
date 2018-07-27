@@ -21,12 +21,12 @@
 	</div>
 
 	<div ng-show="settings.show || settings.map === null">
-		<div class="header">
+		<div class="tabContainer">
 			<div ng-repeat="x in settings.maps">
-				<div class="button upload ui-element header-button-fix" ng-if="x!==settings.map" ng-click="settings.map=x; loadData()">
+				<div class="tab" ng-if="x!==settings.map" ng-click="settings.map=x; loadData()">
 					{{x}}
 				</div>
-				<div style="border: 2px; border-style: solid;" class="button upload ui-element header-button-fix" ng-if="x===settings.map">
+				<div style="border: 2px solid slategrey; border-bottom: 0; font-weight: bold;" class="tab" ng-if="x===settings.map">
 					{{x}}
 				</div>
 			</div>
