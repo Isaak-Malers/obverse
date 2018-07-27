@@ -36,7 +36,7 @@ describe("Basic Language selection tests for wikipedia", function(){
 			done();
 		});
 
-	});
+	}, 50000000);
 });
 
 
