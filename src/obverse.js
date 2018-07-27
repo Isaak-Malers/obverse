@@ -174,21 +174,29 @@ Obverse.prototype.el = function (path) {
     this.log.log("element lookup found the following meta-data: ", "trace");
     this.log.log(JSON.stringify(node, null, "\t"), "trace");
 
-    if ("model" in node && node.model !== null && node.model !== "") {
-        this.log.log(path + " is located by model", "trace");
-        return element(by.model(node["model"]));
+    try{
+	    if ("model" in node && node.model !== null && node.model !== "") {
+	        this.log.log(path + " is located by model", "trace");
+	        return element(by.model(node["model"]));
+	    }
+	    if ("xpath" in node && node.xpath !== null && node.xpath !== "") {
+	        this.log.log(path + " is located by XPATH", "trace");
+	        return element(by.xpath(node["xpath"]));
+	    }
+	    if ("css" in node && node.css !== null && node.css !== "") {
+	        this.log.log(path + " is located by CSS", "trace");
+	        return element(by.css(node["css"]));
+	    }
+    } catch (e) {
+    	this.log.log("obverse.el failed to build protractor element for: " + path, "critical");
+    	this.log.log("this is a fatal exception", "critical");
+    	throw e;
     }
-    if ("xpath" in node && node.xpath !== null && node.xpath !== "") {
-        this.log.log(path + " is located by XPATH", "trace");
-        return element(by.xpath(node["xpath"]));
-    }
-    if ("css" in node && node.css !== null && node.css !== "") {
-        this.log.log(path + " is located by CSS", "trace");
-        return element(by.css(node["css"]));
-    }
+
     //if none of those were found, we have a critical exception.  Throw an error.
-    this.log.log("obverse.el was unable to locate: " + path, "critical");
-    throw("obverse.el was unable to locate: " + path);
+    this.log.log("obverse.el was unable to find a locator for: " + path, "critical");
+    this.log.log("Does the app-map entry for this path have an XPATH, NG-MODEL, or CSS Selector?", "critical");
+    throw("obverse.el was unable find a locator for: " + path);
 };
 
 Obverse.prototype.finalize = function (callback) {

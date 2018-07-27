@@ -65,7 +65,7 @@
             "description": null,
             "css": null,
             "model": null,
-            "url": null
+            "UIdetails": false
           },
           "hooks": []
         },
@@ -89,7 +89,8 @@
             "description": null,
             "css": null,
             "model": null,
-            "url": null
+            "url": null,
+            "UIdetails": false
           },
           "hooks": []
         },
@@ -97,12 +98,12 @@
           "meta": {
             "name": "language",
             "xpath": "//*[@id=\"searchLanguage\"]",
-            "UIdetails": true,
-            "description": "",
             "UIpath": "search-page.language",
+            "description": "",
             "css": null,
             "model": null,
-            "url": null
+            "url": null,
+            "UIdetails": false
           },
           "hooks": []
         }
