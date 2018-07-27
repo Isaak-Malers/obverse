@@ -1,2 +1,4 @@
-images
-app-map-backups
+images/*
+app-map-backups/*
+!images/.gitignore
+!images/.gitignore
