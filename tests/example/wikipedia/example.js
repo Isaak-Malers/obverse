@@ -1,42 +1,13 @@
 var Obverse = require('../../../src/obverse');
-
-
-
-
-
-
-
-
-//data for tests here.  It could also be read in from an external file:
-var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware",
-	"Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky",
-	"Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi",
-	"Missouri","Montana", "Nebraska","Nevada","New Hampshire","New Jersey","New Mexico",
-	"New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
-	"Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont",
-	"Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
-
-
-
-
-
-
-
-
-
-
-
-
 //global test variables can go here, or they could be read in from an external file.
 var url = "https://www.wikipedia.org/";
-
 
 describe("Basic Language selection tests for wikipedia", function(){
 
 	it("should be able to change the language from default to polish", function(done){
 		//construct an obverse object for this test case.
 		var ui = new Obverse("example");
-		ui.setLogLevel("debug");
+		ui.setLogLevel("trace");
 		ui.suppressDumps(true);//failure reasons will not be automatically logged to console.
 		ui.setDelay(1);//additionall delay between actions, setting to 0 breaks protractor.
 		browser.waitForAngularEnabled(false);//disable protractors built in waiting methods.
@@ -66,7 +37,7 @@ describe("Basic Language selection tests for wikipedia", function(){
 		});
 
 	});
-
+});
 
 
 
@@ -88,6 +59,20 @@ describe("Basic Language selection tests for wikipedia", function(){
 
 
 	/*
+
+
+
+//data for tests here.  It could also be read in from an external file:
+var states = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware",
+	"Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky",
+	"Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi",
+	"Missouri","Montana", "Nebraska","Nevada","New Hampshire","New Jersey","New Mexico",
+	"New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania",
+	"Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont",
+	"Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
+
+
+
 
 
 
@@ -139,4 +124,3 @@ describe("Basic Language selection tests for wikipedia", function(){
 		})(states[i]);//this last bit required to force syncronous operation.
 	};
 	*/
-});

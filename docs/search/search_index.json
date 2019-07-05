@@ -1,0 +1,44 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Obverse\n\n\nOverview\n\n\nObverse is a library and style guide which makes developing good protractor tests easier.  This is accomplished by rigid enforcement of test rig quality, and logging quality.  There are 2 major components to accomplishing these goals, A chrome plugin which enforces test rig quality, and a testing library which enforces logging quality.\n\n\nSeparation of Concerns\n\n\nThe goal of testing in Obverse is to separate automated tests into 3 categories basted on how robust or fragile they are:\n\n\n\n\nTest Rig (brittle, low development time)\n\n\nTest Scripts (somewhat robust, medium development time)\n\n\nTest Data (robust, long development time)\n\n\n\n\nThe goal of the software is to provide tools and style conventions that leverage this separation to make maintaining tests easier.  A style guide is included for how to build test-data that is completely isolated from changes to the test, allowing them to be extremely robust.  A logging library for test scripts allows tests simplifies the debugging process, allowing for a quick updating process and flexible tests.  A test rig is build automatically from data collected by a chrome extension, reducing the time required to build and update test rigs which alleviates problems with their fragility.\n\n\nAPI guide\n\n\nAn API guide is provided for using the testing library.  It is recommended to also read the style guide, which will go into details about why the API is built the way that it is.\n\n\nStyle guide\n\n\nThe style guide provides examples and explanations for Obverse testing.  These examples will outline the benefits of writing tests with the separation of concerns mentioned above, as well as examples of how to achieve separation in a variety of scenarios.", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#obverse", 
+            "text": "", 
+            "title": "Obverse"
+        }, 
+        {
+            "location": "/#overview", 
+            "text": "Obverse is a library and style guide which makes developing good protractor tests easier.  This is accomplished by rigid enforcement of test rig quality, and logging quality.  There are 2 major components to accomplishing these goals, A chrome plugin which enforces test rig quality, and a testing library which enforces logging quality.", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#separation-of-concerns", 
+            "text": "The goal of testing in Obverse is to separate automated tests into 3 categories basted on how robust or fragile they are:   Test Rig (brittle, low development time)  Test Scripts (somewhat robust, medium development time)  Test Data (robust, long development time)   The goal of the software is to provide tools and style conventions that leverage this separation to make maintaining tests easier.  A style guide is included for how to build test-data that is completely isolated from changes to the test, allowing them to be extremely robust.  A logging library for test scripts allows tests simplifies the debugging process, allowing for a quick updating process and flexible tests.  A test rig is build automatically from data collected by a chrome extension, reducing the time required to build and update test rigs which alleviates problems with their fragility.", 
+            "title": "Separation of Concerns"
+        }, 
+        {
+            "location": "/#api-guide", 
+            "text": "An API guide is provided for using the testing library.  It is recommended to also read the style guide, which will go into details about why the API is built the way that it is.", 
+            "title": "API guide"
+        }, 
+        {
+            "location": "/#style-guide", 
+            "text": "The style guide provides examples and explanations for Obverse testing.  These examples will outline the benefits of writing tests with the separation of concerns mentioned above, as well as examples of how to achieve separation in a variety of scenarios.", 
+            "title": "Style guide"
+        }, 
+        {
+            "location": "/api/", 
+            "text": "", 
+            "title": "API"
+        }, 
+        {
+            "location": "/style-guide/", 
+            "text": "", 
+            "title": "Style Guide"
+        }
+    ]
+}
